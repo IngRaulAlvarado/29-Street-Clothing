@@ -70,7 +70,6 @@
 			/* HERO */
 			.hero {
 				position: relative; isolation: isolate; min-height: 88vh; display: grid; place-items: center; text-align: center;
-				background: url('portada.jpeg') center/cover no-repeat fixed;
 			}
 			.hero::before { /* oscurecer para contraste */
 				content: ""; position: absolute; inset: 0; z-index: -1;
@@ -164,7 +163,6 @@
 		<!-- HERO -->
 		<section class="hero" id="top" aria-label="Portada">
 			<div class="inner container">
-				<div class="kicker">Urbano • Underground • Barrio</div>
 				<h1>29 Street Clothing</h1>
 				<p class="subtitle">Streetwear real, sin filtro. Drop de prendas seleccionadas, básicos con actitud y piezas que hablan por sí solas. Catálogo en vivo para que veas lo que hay, al momento.</p>
 				<div class="cta-row">
@@ -178,24 +176,18 @@
 		<section id="catalogo" aria-label="Catálogo">
 			<div class="container">
 				<h2 class="section-title">Catálogo en Vivo</h2>
-				<p class="section-sub">Se actualiza en tiempo real desde Canva. Edita tu diseño en Canva y los cambios se verán aquí.</p>
 
 				<div class="catalogo-wrap">
 					<div class="iframe-ratio card glow">
-						<!--
-							Reemplaza el valor de src con tu enlace de Canva (compartir > más > Insertar > copiar HTML y tomar el link con `.../view?embed`)
-							Ejemplo: https://www.canva.com/design/XXXXXXXX/view?embed
-						-->
 						<iframe
 							title="Catálogo 29 Street Clothing"
-							src="https://www.canva.com/design/XXXXXXXX/view?embed"
+							src="https://www.canva.com/design/DAGxfA1p42c/lYKzXk5hzB6pR0OJSz0MxQ/view"
 							allowfullscreen
 							loading="lazy"
 							referrerpolicy="no-referrer-when-downgrade"
 							sandbox="allow-same-origin allow-scripts allow-forms allow-popups"
 						></iframe>
 					</div>
-					<p class="tip">Tip: si tu Canva tiene varias páginas, usa flechas dentro del visor. Para mejor legibilidad en móvil, usa un diseño 1080x1920 (historia vertical) o 1920x1080 (horizontal).</p>
 				</div>
 			</div>
 		</section>
@@ -204,18 +196,17 @@
 		<section id="nosotros" aria-label="Nosotros">
 			<div class="container grid grid-2">
 				<div class="card" style="padding: 22px;">
-					<h3 class="section-title" style="margin-bottom: 8px;">Hecho en Barrio</h3>
-					<p class="muted">Nacimos en la calle y para la calle. Curamos piezas que combinan comodidad con carácter. Trabajamos por drops, cantidades limitadas y restocks según demanda.</p>
+					<p class="muted">Vendemos piezas que combinan comodidad con carácter. Trabajamos por drops, cantidades limitadas y restocks según demanda.</p>
 					<ul class="list mt-20">
 						<li><span class="bullet"></span><span>Prendas seleccionadas, calidad real.</span></li>
-						<li><span class="bullet"></span><span>Estética urbana: negro, grises, acentos neón.</span></li>
-						<li><span class="bullet"></span><span>Atención directa por DM y WhatsApp.</span></li>
-						<li><span class="bullet"></span><span>Envíos locales y recolección.</span></li>
+						<li><span class="bullet"></span><span>Estética urbana</span></li>
+						<li><span class="bullet"></span><span>Atención directa por WhatsApp.</span></li>
+						<li><span class="bullet"></span><span>Entregas solo a domicilio en Colonia Mirasierra.</span></li>
 					</ul>
 				</div>
-				<div class="card" style="padding: 0; overflow: hidden; display: grid; place-items: center;">
-					<img src="portada.jpeg" alt="Mood 29 Street Clothing" style="width: 100%; height: 100%; object-fit: cover; filter: contrast(1.05) saturate(0.9);" />
-				</div>
+                <div class="card" style="padding: 0; overflow: hidden; display: grid; place-items: center; min-height: 250px;">
+                    <img src="portada.jpeg" alt="Mood 29 Street Clothing" style="width: 100%; height: auto; object-fit: contain; filter: contrast(1.05) saturate(0.9);" />
+                </div>
 			</div>
 		</section>
 
@@ -223,23 +214,22 @@
 		<section id="contacto" aria-label="Contacto">
 			<div class="container">
 				<h2 class="section-title">Contacto</h2>
-				<p class="section-sub">Haz tu pedido, preguntas de tallas o disponibilidad. Respondemos rápido.</p>
+				<p class="section-sub">Haz tu pedido o pregunta de tallas/disponibilidad. Entregas solo a domicilio en <strong>Colonia Mirasierra</strong>.</p>
 
 				<div class="card" style="padding: 22px;">
 					<div class="grid" style="grid-template-columns: 1fr; gap: 14px;">
 						<div>
 							<strong>WhatsApp</strong>
 							<div class="muted">Envíanos captura del producto y talla.</div>
-							<div class="mt-10"><a class="btn" href="https://wa.me/0000000000" target="_blank" rel="noopener">Abrir WhatsApp</a></div>
+							<div class="mt-10"><a class="btn" href="https://wa.me/8444555900" target="_blank" rel="noopener">Abrir WhatsApp</a></div>
 						</div>
 						<div>
-							<strong>Instagram</strong>
-							<div class="muted">Nuevos drops, historias y encuestas.</div>
-							<div class="mt-10"><a class="btn btn-ghost" href="https://instagram.com/tuusuario" target="_blank" rel="noopener">Ver Instagram</a></div>
+							<strong>Facebook</strong>
+							<div class="mt-10"><a class="btn btn-ghost" href="https://www.facebook.com/profile.php?id=61579283345454" target="_blank" rel="noopener">Ver Facebook</a></div>
 						</div>
 						<div>
 							<strong>Ubicación</strong>
-							<div class="muted">Entrega en punto acordado. Consulta zonas y horarios por DM.</div>
+							<div class="muted">Domicilios en Colonia Mirasierra. Agenda por WhatsApp para coordinar día y hora.</div>
 						</div>
 					</div>
 				</div>
@@ -254,15 +244,15 @@
 					<span class="muted">© <span class="accent">29 Street Clothing</span> · 2025</span>
 				</div>
 				<div class="socials">
-					<a href="https://instagram.com/tuusuario" target="_blank" aria-label="Instagram" rel="noopener">
-						<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.5-.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5Z" fill="currentColor"/></svg>
+					<a href="https://www.facebook.com/profile.php?id=61579283345454" target="_blank" aria-label="Facebook" rel="noopener">
+						<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+							<path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.877v-6.987H8.078V12h2.36v-2.356c0-2.33 1.388-3.62 3.51-3.62.999 0 2.044.178 2.044.178v2.247h-1.152c-1.136 0-1.49.705-1.49 1.428V12h2.533l-.405 2.89h-2.128v6.987C18.343 21.128 22 16.991 22 12Z" fill="currentColor"/>
+						</svg>
 					</a>
-					<a href="https://wa.me/0000000000" target="_blank" aria-label="WhatsApp" rel="noopener">
+					<a href="https://wa.me/8444555900" target="_blank" aria-label="WhatsApp" rel="noopener">
 						<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M12.04 2C6.52 2 2 6.29 2 11.58c0 2.32.92 4.45 2.44 6.1L3 22l4.5-1.35a10.3 10.3 0 0 0 4.54 1.02c5.52 0 10.04-4.29 10.04-9.58C22.08 6.29 17.56 2 12.04 2Zm0 17.33c-1.52 0-2.93-.39-4.15-1.07l-.3-.17-2.66.79.76-2.51-.2-.26a7.45 7.45 0 0 1-1.6-4.53c0-4.2 3.66-7.6 8.15-7.6 4.5 0 8.15 3.4 8.15 7.6 0 4.2-3.66 7.6-8.15 7.6Zm4.7-5.76c-.26-.13-1.53-.76-1.77-.85-.24-.09-.42-.13-.6.13-.17.26-.69.85-.85 1.02-.15.17-.32.2-.58.07-.26-.13-1.12-.41-2.13-1.3-.79-.68-1.33-1.52-1.48-1.78-.15-.26-.02-.41.11-.54.12-.12.26-.32.38-.48.13-.17.17-.28.26-.47.09-.2.04-.37-.02-.54-.06-.13-.6-1.45-.81-1.98-.21-.5-.43-.43-.6-.43h-.51c-.18 0-.48.07-.73.33-.26.26-1 1-1 2.45s1.02 2.84 1.16 3.04c.13.2 2 3.17 4.86 4.3.68.29 1.2.46 1.62.59.68.22 1.3.19 1.8.12.55-.08 1.53-.62 1.75-1.23.21-.61.21-1.14.15-1.23-.06-.09-.24-.15-.5-.28Z" fill="currentColor"/></svg>
 					</a>
-					<a href="https://tiktok.com/@tuusuario" target="_blank" aria-label="TikTok" rel="noopener">
-						<svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M13.5 2h2a6.5 6.5 0 0 0 6.5 6.5v2A8.5 8.5 0 0 1 15.5 5v9.25a4.75 4.75 0 1 1-4.75-4.75c.25 0 .5.02.74.06v2.1a2.75 2.75 0 1 0 2 .01V2Z" fill="currentColor"/></svg>
-					</a>
+                    
 				</div>
 			</div>
 		</footer>
