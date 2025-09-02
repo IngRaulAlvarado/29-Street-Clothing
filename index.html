@@ -110,13 +110,15 @@
 			/* CATÁLOGO (iframe responsivo) */
 			.catalogo-wrap { display: grid; gap: 20px; }
 			.iframe-ratio {
-				position: relative; width: 100%; aspect-ratio: 16/9; border-radius: 12px; overflow: hidden;
+				position: relative; width: min(100%, 900px); margin-inline: auto; border-radius: 12px; overflow: hidden;
 				border: 1px solid rgba(255,255,255,0.1);
 			}
 			.iframe-ratio iframe {
 				position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #0d0d0d;
 			}
 			.tip { color: var(--muted); font-size: 13px; }
+			.fallback-row { display: none; align-items: center; gap: 12px; }
+			.fallback-row .btn { padding: 10px 14px; font-size: 13px; }
 
 			/* INFO */
 			.grid { display: grid; gap: 20px; }
@@ -179,14 +181,17 @@
 
 				<div class="catalogo-wrap">
 					<div class="iframe-ratio card glow">
-						<iframe
-							title="Catálogo 29 Street Clothing"
-							src="https://www.canva.com/design/DAGxfA1p42c/lYKzXk5hzB6pR0OJSz0MxQ/view"
-							allowfullscreen
-							loading="lazy"
-							referrerpolicy="no-referrer-when-downgrade"
-							sandbox="allow-same-origin allow-scripts allow-forms allow-popups"
-						></iframe>
+						<div id="canva-embed-card" style="position: relative; width: 100%; height: 0; padding-top: 75.0000%; margin: 0; overflow: hidden; border-radius: 8px;">
+							<iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
+								src="https://www.canva.com/design/DAGxfA1p42c/lYKzXk5hzB6pR0OJSz0MxQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+						</div>
+						<p class="tip" style="margin: 8px 0 0; text-align:center;">
+							<a href="https://www.canva.com/design/DAGxfA1p42c/lYKzXk5hzB6pR0OJSz0MxQ/view?utm_content=DAGxfA1p42c&utm_campaign=designshare&utm_medium=embeds&utm_source=link" target="_blank" rel="noopener">
+						</p>
+					</div>
+					<div class="fallback-row">
+						<span class="tip">Si el catálogo no aparece aquí, ábrelo en una pestaña:</span>
+						<a id="catalogo-fallback" class="btn btn-ghost" href="https://www.canva.com/design/DAGxfA1p42c/lYKzXk5hzB6pR0OJSz0MxQ/view?embed" target="_blank" rel="noopener">Abrir Catálogo</a>
 					</div>
 				</div>
 			</div>
@@ -261,12 +266,28 @@
 			// Pequeñas mejoras UX
 			// 1) Permitir setear el Canva via hash: #canva=https://www.canva.com/design/XXXXX/view?embed
 			(function() {
+				const frame = document.querySelector('#catalogo iframe');
+				const fallbackBtn = document.getElementById('catalogo-fallback');
+				// sync fallback with current src
+				if (frame && fallbackBtn) fallbackBtn.href = frame.src;
+
 				const hash = new URLSearchParams(location.hash.replace('#',''));
 				const url = hash.get('canva');
 				if (url) {
-					const frame = document.querySelector('#catalogo iframe');
-					try { new URL(url); frame.src = url; } catch(e) { /* ignora */ }
+					try {
+						new URL(url);
+						frame.src = url;
+						if (fallbackBtn) fallbackBtn.href = url;
+					} catch(e) { /* ignora */ }
 				}
+
+				// mostrar fallback si el iframe no carga en ~5.5s
+				const fallbackRow = document.querySelector('.fallback-row');
+				let loaded = false;
+				if (frame) {
+					frame.addEventListener('load', function() { loaded = true; if (fallbackRow) fallbackRow.style.display = 'none'; }, { once: true });
+				}
+				setTimeout(function(){ if (!loaded && fallbackRow) fallbackRow.style.display = 'inline-flex'; }, 5500);
 			})();
 		</script>
 	</body>
